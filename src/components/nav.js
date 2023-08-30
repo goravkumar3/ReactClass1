@@ -1,7 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 
 function Nav(){
-  let check=false;
+  let [check,setCheck]=useState(false);
+  let change=()=>{
+    setCheck(true)
+  }
+  
+  let lchange=()=>{
+    setCheck(false)
+  }
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -12,7 +19,7 @@ function Nav(){
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className={check?"active":"disabled"} aria-current="page" href=" " onMouseOver={()=>{check=true}}>Home</a>
+                <a className={check?"act":"dis"} aria-current="page" href=" " onMouseEnter={change} onMouseLeave={lchange}>Home</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href=" ">Link</a>
